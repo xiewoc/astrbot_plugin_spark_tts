@@ -1,0 +1,7 @@
+name: astrbot_plugin_spark_tts
+desc: 用于使用Spark-TTS进行文字转语音。 
+help: 与官方tts方法一致，配置时用openai_tts_api，api填入127.0.0.1:5080，key随意，详情见repo
+version: v0.0.1
+author: xiewoc 
+repo: https://github.com/xiewoc/astrbot_plugin_spark_tts
+

@@ -1,0 +1,80 @@
+{
+    "if_remove_think_tag": {
+        "description": "是否去除<think></think>",
+        "type": "bool",
+        "hint": "因为deepseek-r1模型及其衍生模型会以<think>.....</think>的形式输出思考过程，会影响语音合成，如果不是使用deepseek-r1模型及其衍生模型则可忽略",
+        "obvious_hint": true
+    },
+    "if_reduce_parenthesis": {
+        "description": "是否提醒llm减少括号中内容生成",
+        "type": "bool",
+        "hint": "有些人格设置会影响该设置生效，请酌情使用"
+    },
+    "if_preload": {
+        "description": "是否预加载模型",
+        "type": "bool",
+        "hint": "快速加载及debug时不建议开启，但若要使用function_call则要开启"
+    },
+    "misc":{
+        "description": "配置",
+        "type": "object",
+        "hint": "如果要使用预训练音色，只用填语音性别、语音音调、语音速度即可",
+        "obvious_hint":true,
+        "items": {
+            "prompt_speech":{
+                "description": "源音频文件",
+                "type": "string",
+                "hint": "源语音",
+                "default": ""
+            },
+            "prompt_text":{
+                "description": "音频文本 (可选)",
+                "type": "string",
+                "hint": "源语音中的文字内容，用以生成准确语音，文字内容越准确越好",
+                "default": ""
+            },
+            "gender":{
+                "description": "语音性别",
+                "type": "string",
+                "options": ["male","female"],
+                "default": "female"
+            },
+            "pitch":{
+                "description": "语音音调",
+                "type": "string",
+                "options": ["very_low","low","moderate","high","very_high"],
+                "default": "moderate"
+            },
+            "speed":{
+                "description": "语音速度",
+                "type": "string",
+                "options": ["very_low","low","moderate","high","very_high"],
+                "default": "moderate"
+            }
+        }
+    },
+    "serve_config":{
+        "description": "服务器设置",
+        "type": "object",
+        "items": {
+            "server_ip":{
+                "description": "服务器地址",
+                "type": "string",
+                "hint": "若为本机使用则不需要更改,即127.0.0.1",
+                "default": "127.0.0.1"
+            },
+            "if_seperate_serve": {
+                "description": "是否使用分布式部署",
+                "type": "bool",
+                "hint": "开启此选项后，本插件就不会自己启动service.py了，且按照服务器地址去访问api",
+                "default": false
+            },
+            "CORRECT_API_KEY": {
+                "description": "api密钥",
+                "type": "string",
+                "hint": "自定义的api密钥，用于验证请求",
+                "default": "1145141919810"
+            }
+        }
+    }
+}
