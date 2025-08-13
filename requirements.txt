@@ -12,3 +12,6 @@ torch
 torchaudio
 modelscope
 aiohttp
+uvicorn
+fastapi
+fastapi-cli
